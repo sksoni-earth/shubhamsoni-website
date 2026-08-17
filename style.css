@@ -221,6 +221,38 @@ nav {
     z-index: 2;
 }
 
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: min(390px, 100%);
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 25px 60px rgba(16, 23, 22, 0.16);
+
+    position: relative;
+    z-index: 2;
+}
+
 .hero-content {
     max-width: 900px;
 }
