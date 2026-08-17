@@ -1,729 +1,67 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Shubham Soni | Geomorphology • GIS • Remote Sensing</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Shubham Soni | Geomorphology • GIS • Remote Sensing
+    </title>
 
     <meta name="description"
           content="Shubham Soni is a PhD researcher in Geography specializing in geomorphology, GIS, remote sensing, and sustainable land and water resource management.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
           rel="stylesheet">
 
-    <style>
-
-        /* =========================
-           GLOBAL
-        ========================= */
-
-        :root {
-            --bg: #f5f3ee;
-            --white: #ffffff;
-            --dark: #101716;
-            --text: #343b38;
-            --muted: #737b76;
-            --green: #1e5b4f;
-            --green-light: #dce9e2;
-            --line: #d9ddd8;
-            --accent: #b58b55;
-
-            --serif: "Playfair Display", Georgia, serif;
-            --sans: "DM Sans", Arial, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--sans);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: min(1180px, 90%);
-            margin: auto;
-        }
-
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background: rgba(245, 243, 238, 0.85);
-            backdrop-filter: blur(16px);
-
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-
-        nav {
-            width: min(1180px, 90%);
-            margin: auto;
-
-            height: 78px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--dark);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 34px;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            font-weight: 500;
-            color: #555d58;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--green);
-        }
-
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            padding-top: 78px;
-
-            display: flex;
-            align-items: center;
-
-            position: relative;
-            overflow: hidden;
-
-            background:
-                radial-gradient(circle at 80% 25%, rgba(30,91,79,0.13), transparent 32%),
-                radial-gradient(circle at 10% 80%, rgba(181,139,85,0.10), transparent 28%),
-                var(--bg);
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            right: -180px;
-            top: 120px;
-
-            border: 1px solid rgba(30,91,79,0.15);
-            border-radius: 50%;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-
-            width: 700px;
-            height: 700px;
-
-            right: -280px;
-            top: 20px;
-
-            border: 1px solid rgba(30,91,79,0.08);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-
-            margin-bottom: 28px;
-        }
-
-        .eyebrow::before {
-            content: "";
-            width: 35px;
-            height: 1px;
-            background: var(--green);
-        }
-
-        .hero h1 {
-            font-family: var(--serif);
-            font-size: clamp(55px, 7vw, 100px);
-            line-height: 0.98;
-            font-weight: 600;
-            letter-spacing: -3px;
-            color: var(--dark);
-        }
-
-        .hero h1 em {
-            color: var(--green);
-            font-style: normal;
-        }
-
-        .hero-description {
-            max-width: 620px;
-
-            margin-top: 34px;
-
-            font-size: 18px;
-            line-height: 1.8;
-            color: var(--muted);
-        }
-
-        .hero-buttons {
-            margin-top: 40px;
-
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-
-            padding: 14px 24px;
-
-            border-radius: 50px;
-
-            font-size: 14px;
-            font-weight: 600;
-
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: var(--green);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(30,91,79,0.2);
-        }
-
-        .btn-outline {
-            border: 1px solid var(--line);
-            background: rgba(255,255,255,0.5);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--green);
-            color: var(--green);
-        }
-
-        .scroll {
-            position: absolute;
-            bottom: 30px;
-            left: 5%;
-
-            font-size: 11px;
-            letter-spacing: 2px;
-            color: var(--muted);
-            text-transform: uppercase;
-        }
-
-
-        /* =========================
-           INTRO STATS
-        ========================= */
-
-        .stats {
-            background: var(--dark);
-            color: white;
-
-            padding: 50px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .stat {
-            padding: 10px 35px;
-            border-right: 1px solid rgba(255,255,255,0.12);
-        }
-
-        .stat:last-child {
-            border-right: none;
-        }
-
-        .stat-number {
-            font-family: var(--serif);
-            font-size: 36px;
-            color: #fff;
-        }
-
-        .stat-label {
-            color: #aeb7b2;
-            font-size: 13px;
-            margin-top: 4px;
-        }
-
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 120px 0;
-        }
-
-        .section-label {
-            color: var(--green);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2.5px;
-            margin-bottom: 22px;
-        }
-
-        .section-title {
-            font-family: var(--serif);
-            font-size: clamp(40px, 5vw, 65px);
-            line-height: 1.1;
-            color: var(--dark);
-            font-weight: 600;
-            letter-spacing: -1px;
-        }
-
-        .section-intro {
-            max-width: 650px;
-            margin-top: 25px;
-            color: var(--muted);
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 90px;
-            align-items: center;
-        }
-
-        .about-text p {
-            margin-top: 28px;
-            color: var(--muted);
-            font-size: 16px;
-        }
-
-        .about-box {
-            padding: 45px;
-            background: var(--green-light);
-            border-radius: 3px;
-            position: relative;
-        }
-
-        .about-box::before {
-            content: "GEOGRAPHY";
-            position: absolute;
-            top: 25px;
-            right: 30px;
-
-            font-size: 10px;
-            letter-spacing: 2px;
-            color: var(--green);
-        }
-
-        .about-box h3 {
-            font-family: var(--serif);
-            font-size: 34px;
-            color: var(--dark);
-            line-height: 1.25;
-        }
-
-        .about-box p {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #53645e;
-        }
-
-
-        /* =========================
-           RESEARCH
-        ========================= */
-
-        .research-section {
-            background: var(--dark);
-            color: white;
-        }
-
-        .research-section .section-label {
-            color: #9bc3b5;
-        }
-
-        .research-section .section-title {
-            color: white;
-        }
-
-        .research-card {
-            margin-top: 60px;
-
-            padding: 55px;
-
-            border: 1px solid rgba(255,255,255,0.13);
-            background: rgba(255,255,255,0.035);
-
-            position: relative;
-        }
-
-        .research-number {
-            font-size: 12px;
-            color: #9bc3b5;
-            letter-spacing: 2px;
-        }
-
-        .research-card h3 {
-            max-width: 850px;
-            margin-top: 25px;
-
-            font-family: var(--serif);
-            font-size: clamp(30px, 4vw, 52px);
-            line-height: 1.2;
-            font-weight: 500;
-        }
-
-        .research-card p {
-            max-width: 720px;
-            margin-top: 25px;
-
-            color: #aeb7b2;
-            font-size: 16px;
-        }
-
-        .research-location {
-            display: inline-block;
-            margin-top: 35px;
-
-            color: #d3dfda;
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-
-        /* =========================
-           FOCUS AREAS
-        ========================= */
-
-        .focus-grid {
-            margin-top: 60px;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-
-            background: var(--line);
-        }
-
-        .focus-card {
-            background: var(--bg);
-            padding: 42px 35px;
-            min-height: 240px;
-
-            transition: 0.3s;
-        }
-
-        .focus-card:hover {
-            background: white;
-            transform: translateY(-5px);
-        }
-
-        .focus-number {
-            font-size: 11px;
-            color: var(--accent);
-            letter-spacing: 2px;
-        }
-
-        .focus-card h3 {
-            margin-top: 35px;
-
-            font-family: var(--serif);
-            font-size: 27px;
-            color: var(--dark);
-        }
-
-        .focus-card p {
-            margin-top: 12px;
-            font-size: 14px;
-            color: var(--muted);
-        }
-
-
-        /* =========================
-           METHODS
-        ========================= */
-
-        .methods {
-            background: #e8e6df;
-        }
-
-        .method-list {
-            margin-top: 55px;
-
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-
-            border-top: 1px solid #c9ccc6;
-        }
-
-        .method {
-            padding: 28px 5px;
-
-            border-bottom: 1px solid #c9ccc6;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .method span:first-child {
-            font-family: var(--serif);
-            font-size: 24px;
-            color: var(--dark);
-        }
-
-        .method span:last-child {
-            font-size: 12px;
-            color: var(--muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact {
-            text-align: center;
-        }
-
-        .contact .section-intro {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-email {
-            display: inline-block;
-            margin-top: 40px;
-
-            font-family: var(--serif);
-            font-size: clamp(25px, 4vw, 42px);
-            color: var(--green);
-
-            border-bottom: 1px solid rgba(30,91,79,0.25);
-
-            transition: 0.3s;
-        }
-
-        .contact-email:hover {
-            border-color: var(--green);
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: var(--dark);
-            color: #aeb7b2;
-
-            padding: 35px 0;
-        }
-
-        .footer-inner {
-            width: min(1180px, 90%);
-            margin: auto;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 12px;
-        }
-
-        .footer-name {
-            color: white;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-
-        /* =========================
-           ANIMATION
-        ========================= */
-
-        .fade-up {
-            animation: fadeUp 1s ease forwards;
-        }
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform: translateY(25px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 800px) {
-
-            nav {
-                height: 70px;
-            }
-
-            .nav-links {
-                gap: 15px;
-            }
-
-            .nav-links a {
-                font-size: 12px;
-            }
-
-            .hero h1 {
-                font-size: 58px;
-                letter-spacing: -2px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 85px 0;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .stat {
-                border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.12);
-                padding-bottom: 20px;
-            }
-
-            .stat:last-child {
-                border-bottom: none;
-            }
-
-            .focus-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .method-list {
-                grid-template-columns: 1fr;
-            }
-
-            .research-card {
-                padding: 35px 25px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-        }
-
-    </style>
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- =========================================================
      NAVIGATION
-========================= -->
+========================================================= -->
 
 <header>
 
     <nav>
 
-        <a href="#" class="logo">
+        <a href="#"
+           class="logo">
             SHUBHAM SONI
         </a>
 
+
         <div class="nav-links">
 
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
 
-            <a href="#research">Research</a>
+            <a href="#research">
+                Research
+            </a>
 
-            <a href="#focus">Focus</a>
+            <a href="#focus">
+                Focus
+            </a>
 
-            <a href="#contact">Contact</a>
+            <a href="#contact">
+                Contact
+            </a>
 
         </div>
 
@@ -736,13 +74,16 @@
 <main>
 
 
-<!-- =========================
+<!-- =========================================================
      HERO
-========================= -->
+========================================================= -->
 
 <section class="hero">
 
     <div class="container hero-container">
+
+
+        <!-- HERO TEXT -->
 
         <div class="hero-content fade-up">
 
@@ -750,32 +91,51 @@
                 GEOMORPHOLOGY • GIS • REMOTE SENSING
             </div>
 
+
             <h1>
+
                 Understanding<br>
+
                 Landscapes<br>
+
                 Through <em>Geography.</em>
+
             </h1>
 
+
             <p class="hero-description">
+
                 PhD researcher in Geography exploring geomorphic processes,
                 spatial systems and sustainable approaches to land and water
                 resource management.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#research" class="btn btn-primary">
+                <a href="#research"
+                   class="btn btn-primary">
+
                     Explore Research →
+
                 </a>
 
-                <a href="#about" class="btn btn-outline">
+
+                <a href="#about"
+                   class="btn btn-outline">
+
                     About Me
+
                 </a>
 
             </div>
 
         </div>
 
+
+
+        <!-- HERO IMAGE -->
 
         <div class="hero-image fade-up">
 
@@ -786,61 +146,28 @@
 
         </div>
 
+
     </div>
+
 
     <div class="scroll">
+
         Scroll to explore ↓
-    </div>
 
-</section>
-
-            <div class="eyebrow">
-                GEOMORPHOLOGY • GIS • REMOTE SENSING
-            </div>
-
-            <h1>
-                Understanding<br>
-                Landscapes<br>
-                Through <em>Geography.</em>
-            </h1>
-
-            <p class="hero-description">
-                PhD researcher in Geography exploring geomorphic processes,
-                spatial systems and sustainable approaches to land and water
-                resource management.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#research" class="btn btn-primary">
-                    Explore Research →
-                </a>
-
-                <a href="#about" class="btn btn-outline">
-                    About Me
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="scroll">
-        Scroll to explore ↓
     </div>
 
 </section>
 
 
 
-<!-- =========================
-     STATS
-========================= -->
+<!-- =========================================================
+     INTRO STATS
+========================================================= -->
 
 <div class="stats">
 
     <div class="container stats-grid">
+
 
         <div class="stat">
 
@@ -880,19 +207,21 @@
 
         </div>
 
+
     </div>
 
 </div>
 
 
 
-<!-- =========================
+<!-- =========================================================
      ABOUT
-========================= -->
+========================================================= -->
 
 <section id="about">
 
     <div class="container about-grid">
+
 
         <div class="about-text">
 
@@ -900,38 +229,56 @@
                 01 — ABOUT
             </div>
 
+
             <h2 class="section-title">
-                Studying the relationship between land, water & landscape.
+
+                Studying the relationship
+                between land, water &
+                landscape.
+
             </h2>
 
-            <p>
-                I am a PhD researcher in Geography with a specialization
-                in geomorphology and sustainable natural resource management.
-            </p>
 
             <p>
+
+                I am a PhD researcher in Geography with a specialization
+                in geomorphology and sustainable natural resource management.
+
+            </p>
+
+
+            <p>
+
                 My work combines field observations, GIS, remote sensing,
                 DEM analysis and spatial techniques to investigate landscape
                 processes and environmental systems.
+
             </p>
 
         </div>
+
 
 
         <div class="about-box">
 
             <h3>
+
                 From landscape
                 processes to
                 sustainable
                 resource management.
+
             </h3>
 
+
             <p>
+
                 Research • Spatial Analysis • Environmental Geography
+
             </p>
 
         </div>
+
 
     </div>
 
@@ -939,17 +286,20 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      RESEARCH
-========================= -->
+========================================================= -->
 
-<section id="research" class="research-section">
+<section id="research"
+         class="research-section">
 
     <div class="container">
+
 
         <div class="section-label">
             02 — CURRENT RESEARCH
         </div>
+
 
         <h2 class="section-title">
             Research Focus
@@ -958,25 +308,36 @@
 
         <div class="research-card">
 
+
             <div class="research-number">
                 PhD RESEARCH
             </div>
 
+
             <h3>
+
                 Geomorphic Assessment for Sustainable Land and Water
                 Resources Management of Northeast Aravalli Hills of Rajasthan
+
             </h3>
 
+
             <p>
+
                 The research investigates geomorphic characteristics,
                 land resources and water resources of the Northeast Aravalli
                 Hills, with the broader objective of supporting sustainable
                 environmental management and spatial planning.
+
             </p>
 
+
             <span class="research-location">
+
                 Rajasthan • India
+
             </span>
+
 
         </div>
 
@@ -986,26 +347,32 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      RESEARCH FOCUS
-========================= -->
+========================================================= -->
 
 <section id="focus">
 
     <div class="container">
 
+
         <div class="section-label">
             03 — RESEARCH AREAS
         </div>
+
 
         <h2 class="section-title">
             Areas of Interest
         </h2>
 
+
         <p class="section-intro">
+
             My academic interests sit at the intersection of physical
             geography, geospatial technology and natural resource management.
+
         </p>
+
 
 
         <div class="focus-grid">
@@ -1022,11 +389,14 @@
                 </h3>
 
                 <p>
+
                     Understanding landforms, geomorphic processes,
                     drainage systems and landscape evolution.
+
                 </p>
 
             </div>
+
 
 
             <div class="focus-card">
@@ -1040,11 +410,14 @@
                 </h3>
 
                 <p>
+
                     Spatial analysis, satellite imagery, DEMs and
                     geospatial techniques for environmental assessment.
+
                 </p>
 
             </div>
+
 
 
             <div class="focus-card">
@@ -1058,11 +431,14 @@
                 </h3>
 
                 <p>
+
                     Hydro-geomorphic analysis and sustainable
                     management of water resources.
+
                 </p>
 
             </div>
+
 
 
             <div class="focus-card">
@@ -1076,11 +452,14 @@
                 </h3>
 
                 <p>
+
                     Assessment of land characteristics and their
                     relationship with sustainable resource use.
+
                 </p>
 
             </div>
+
 
 
             <div class="focus-card">
@@ -1094,11 +473,14 @@
                 </h3>
 
                 <p>
+
                     Quantitative analysis of geographic patterns,
                     terrain and environmental processes.
+
                 </p>
 
             </div>
+
 
 
             <div class="focus-card">
@@ -1112,11 +494,14 @@
                 </h3>
 
                 <p>
+
                     Linking geographic knowledge with sustainable
                     environmental planning and management.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1126,54 +511,111 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      METHODS
-========================= -->
+========================================================= -->
 
 <section class="methods">
 
     <div class="container">
 
+
         <div class="section-label">
             04 — METHODS & TOOLS
         </div>
+
 
         <h2 class="section-title">
             How I Study Landscapes
         </h2>
 
 
+
         <div class="method-list">
 
-            <div class="method">
-                <span>Geographic Information Systems</span>
-                <span>GIS</span>
-            </div>
 
             <div class="method">
-                <span>Remote Sensing</span>
-                <span>Satellite Data</span>
+
+                <span>
+                    Geographic Information Systems
+                </span>
+
+                <span>
+                    GIS
+                </span>
+
             </div>
 
-            <div class="method">
-                <span>Digital Elevation Models</span>
-                <span>DEM</span>
-            </div>
+
 
             <div class="method">
-                <span>Hydro-Geomorphic Analysis</span>
-                <span>Hydrology</span>
+
+                <span>
+                    Remote Sensing
+                </span>
+
+                <span>
+                    Satellite Data
+                </span>
+
             </div>
 
-            <div class="method">
-                <span>Spatial Analysis</span>
-                <span>Geospatial</span>
-            </div>
+
 
             <div class="method">
-                <span>Field Observation</span>
-                <span>Fieldwork</span>
+
+                <span>
+                    Digital Elevation Models
+                </span>
+
+                <span>
+                    DEM
+                </span>
+
             </div>
+
+
+
+            <div class="method">
+
+                <span>
+                    Hydro-Geomorphic Analysis
+                </span>
+
+                <span>
+                    Hydrology
+                </span>
+
+            </div>
+
+
+
+            <div class="method">
+
+                <span>
+                    Spatial Analysis
+                </span>
+
+                <span>
+                    Geospatial
+                </span>
+
+            </div>
+
+
+
+            <div class="method">
+
+                <span>
+                    Field Observation
+                </span>
+
+                <span>
+                    Fieldwork
+                </span>
+
+            </div>
+
 
         </div>
 
@@ -1183,41 +625,55 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      CONTACT
-========================= -->
+========================================================= -->
 
-<section id="contact" class="contact">
+<section id="contact"
+         class="contact">
 
     <div class="container">
+
 
         <div class="section-label">
             05 — CONTACT
         </div>
 
+
         <h2 class="section-title">
             Let's connect.
         </h2>
 
+
         <p class="section-intro">
+
             For academic collaboration, research discussions,
             professional opportunities and related enquiries.
+
         </p>
+
 
         <a
             href="mailto:sksoni01@outlook.com"
             class="contact-email">
+
             sksoni01@outlook.com
+
         </a>
+
 
         <div style="margin-top:35px;">
 
-            <a href="mailto:sksoni01@outlook.com"
-               class="btn btn-primary">
+            <a
+                href="mailto:sksoni01@outlook.com"
+                class="btn btn-primary">
+
                 Send an Email →
+
             </a>
 
         </div>
+
 
     </div>
 
@@ -1228,21 +684,28 @@
 
 
 
-<!-- =========================
+<!-- =========================================================
      FOOTER
-========================= -->
+========================================================= -->
 
 <footer>
 
     <div class="footer-inner">
 
+
         <div class="footer-name">
+
             SHUBHAM SONI
+
         </div>
 
+
         <div>
+
             © 2026 Shubham Soni • Geography & Geomorphology
+
         </div>
+
 
     </div>
 
@@ -1250,5 +713,5 @@
 
 
 </body>
+
 </html>
-```
