@@ -239,6 +239,24 @@ nav {
     align-items: center;
 }
 
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 90%;
+    height: 90%;
+
+    right: -18px;
+    bottom: -18px;
+
+    border: 1px solid var(--green);
+
+    opacity: 0.25;
+
+    z-index: 1;
+}
+
 .hero-image img {
     width: min(390px, 100%);
     aspect-ratio: 4 / 5;
