@@ -2883,3 +2883,554 @@ footer {
 
 }
 
+/* =========================================================
+   CV PAGE
+========================================================= */
+
+
+/* =========================================================
+   CV HERO
+========================================================= */
+
+.cv-art-hero {
+    min-height: 78vh;
+
+    padding: 165px 0 110px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 35%,
+            rgba(30, 91, 79, 0.12),
+            transparent 28%
+        ),
+        var(--ivory);
+
+    overflow: hidden;
+}
+
+.cv-hero-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        340px;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.cv-hero-main h1 {
+    max-width: 850px;
+
+    margin-top: 12px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(58px, 7vw, 94px);
+
+    line-height: 0.98;
+
+    letter-spacing: -4px;
+
+    font-weight: 600;
+
+    color: var(--dark);
+}
+
+.cv-hero-main p {
+    max-width: 620px;
+
+    margin-top: 35px;
+
+    margin-bottom: 35px;
+
+    font-size: 17px;
+
+    line-height: 1.85;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   ARTISTIC CV MARK
+========================================================= */
+
+.cv-hero-mark {
+    width: 310px;
+    height: 390px;
+
+    justify-self: center;
+
+    position: relative;
+
+    border:
+        1px solid rgba(30, 91, 79, 0.35);
+
+    transform: rotate(3deg);
+}
+
+.cv-hero-mark::before {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 330px;
+
+    left: 28px;
+    top: 28px;
+
+    border:
+        1px solid rgba(184, 150, 87, 0.55);
+
+    transform: rotate(-7deg);
+}
+
+.cv-hero-mark::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    right: -45px;
+    bottom: -45px;
+
+    border:
+        1px solid rgba(30, 91, 79, 0.25);
+
+    border-radius: 50%;
+}
+
+.cv-mark-inner {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2;
+}
+
+.cv-mark-inner span {
+    font-family: var(--serif);
+
+    font-size: 135px;
+
+    line-height: 0.9;
+
+    letter-spacing: -8px;
+
+    color: var(--green);
+}
+
+.cv-mark-inner small {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   PRIVATE ACCESS
+========================================================= */
+
+.cv-access {
+    padding: 120px 0;
+
+    background: var(--dark);
+
+    color: var(--white);
+}
+
+.cv-access-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 100px;
+}
+
+.cv-access .section-label {
+    color: #9bc3b5;
+}
+
+.cv-access h2 {
+    max-width: 600px;
+
+    margin-top: 12px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(45px, 5vw, 70px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+
+    color: var(--white);
+}
+
+.cv-access-text {
+    max-width: 620px;
+}
+
+.cv-access-text p {
+    margin-bottom: 25px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #aeb7b2;
+}
+
+
+/* =========================================================
+   CV PROCESS
+========================================================= */
+
+.cv-process {
+    padding: 120px 0;
+
+    background: var(--ivory);
+}
+
+.cv-process-list {
+    max-width: 1050px;
+
+    margin-top: 60px;
+
+    border-top:
+        1px solid var(--line);
+}
+
+.cv-process-item {
+    display: grid;
+
+    grid-template-columns: 90px 1fr;
+
+    gap: 35px;
+
+    padding: 35px 0;
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+.cv-process-number {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+}
+
+.cv-process-content h3 {
+    font-family: var(--serif);
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: var(--dark);
+}
+
+.cv-process-content p {
+    max-width: 650px;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   CV PROFILE
+========================================================= */
+
+.cv-profile {
+    padding: 120px 0;
+
+    background: #e8e6df;
+}
+
+.cv-profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 1px;
+
+    margin-top: 60px;
+
+    background: #c9ccc6;
+
+    border:
+        1px solid #c9ccc6;
+}
+
+.cv-profile-card {
+    min-height: 240px;
+
+    padding: 40px;
+
+    background: #e8e6df;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.cv-profile-card:hover {
+    background: var(--white);
+
+    transform: translateY(-4px);
+}
+
+.cv-profile-card span {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+}
+
+.cv-profile-card h3 {
+    margin-top: 35px;
+
+    font-family: var(--serif);
+
+    font-size: 29px;
+
+    font-weight: 500;
+
+    color: var(--dark);
+}
+
+.cv-profile-card p {
+    max-width: 390px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   REQUEST CTA
+========================================================= */
+
+.cv-request {
+    padding: 125px 0 145px;
+
+    background: var(--ivory);
+}
+
+.cv-request-inner {
+    max-width: 850px;
+}
+
+.cv-request h2 {
+    max-width: 800px;
+
+    margin-top: 12px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(48px, 6vw, 76px);
+
+    line-height: 1.04;
+
+    letter-spacing: -3px;
+
+    font-weight: 600;
+
+    color: var(--dark);
+}
+
+.cv-request p {
+    max-width: 650px;
+
+    margin-top: 28px;
+
+    margin-bottom: 35px;
+
+    font-size: 16px;
+
+    line-height: 1.85;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   CV PAGE — TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .cv-art-hero {
+        min-height: auto;
+
+        padding: 135px 0 90px;
+    }
+
+    .cv-hero-layout {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+    .cv-hero-main h1 {
+        font-size:
+            clamp(50px, 12vw, 72px);
+
+        letter-spacing: -3px;
+    }
+
+    .cv-hero-main p {
+        font-size: 15px;
+    }
+
+    .cv-hero-mark {
+        width: 250px;
+        height: 315px;
+
+        justify-self: start;
+    }
+
+    .cv-mark-inner span {
+        font-size: 110px;
+    }
+
+    .cv-access,
+    .cv-process,
+    .cv-profile {
+        padding: 90px 0;
+    }
+
+    .cv-access-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .cv-process-list {
+        margin-top: 45px;
+    }
+
+    .cv-process-item {
+        grid-template-columns: 55px 1fr;
+
+        gap: 20px;
+    }
+
+    .cv-profile-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+    }
+
+    .cv-request {
+        padding: 90px 0 110px;
+    }
+
+}
+
+
+/* =========================================================
+   CV PAGE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .cv-art-hero {
+        padding-top: 120px;
+    }
+
+    .cv-hero-main h1 {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .cv-hero-mark {
+        width: 220px;
+        height: 280px;
+    }
+
+    .cv-mark-inner span {
+        font-size: 95px;
+    }
+
+    .cv-access h2 {
+        font-size: 43px;
+    }
+
+    .cv-process-item {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .cv-process-content h3 {
+        font-size: 26px;
+    }
+
+    .cv-profile-card {
+        padding: 30px 25px;
+
+        min-height: auto;
+    }
+
+    .cv-request h2 {
+        font-size: 44px;
+
+        letter-spacing: -2px;
+    }
+
+}
