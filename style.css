@@ -2419,3 +2419,473 @@ footer {
 
 }
 ```
+
+```css
+/* =========================================================
+   INSIGHTS PAGE
+========================================================= */
+
+
+/* =========================================================
+   INSIGHTS HERO
+========================================================= */
+
+.insights-page-hero {
+    min-height: 70vh;
+
+    padding: 170px 0 110px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 82% 28%,
+            rgba(30, 91, 79, 0.12),
+            transparent 30%
+        ),
+        var(--ivory);
+}
+
+.insights-page-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 560px;
+    height: 560px;
+
+    right: -270px;
+    top: 70px;
+
+    border:
+        1px solid rgba(30, 91, 79, 0.10);
+
+    border-radius: 50%;
+}
+
+.insights-page-title {
+    max-width: 900px;
+
+    margin-top: 10px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(54px, 7vw, 88px);
+
+    line-height: 1.02;
+
+    font-weight: 600;
+
+    letter-spacing: -3px;
+
+    color: var(--dark);
+}
+
+.insights-page-intro {
+    max-width: 700px;
+
+    margin-top: 35px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.insights-coming {
+    padding: 125px 0;
+
+    background: var(--dark);
+
+    color: var(--white);
+}
+
+.insights-coming-inner {
+    max-width: 850px;
+}
+
+.insights-coming .section-label {
+    color: #9bc3b5;
+}
+
+.insights-coming h2 {
+    max-width: 750px;
+
+    margin-top: 15px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(45px, 6vw, 72px);
+
+    line-height: 1.08;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+
+    color: var(--white);
+}
+
+.insights-coming p {
+    max-width: 650px;
+
+    margin-top: 30px;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #aeb7b2;
+}
+
+.coming-line {
+    width: 100%;
+
+    height: 1px;
+
+    margin-top: 50px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+.coming-note {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #9bc3b5;
+}
+
+
+/* =========================================================
+   INSIGHTS CATEGORIES
+========================================================= */
+
+.insights-page-section {
+    padding: 120px 0;
+}
+
+.insights-category-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1px;
+
+    margin-top: 60px;
+
+    background: var(--line);
+
+    border:
+        1px solid var(--line);
+}
+
+.insights-category {
+    min-height: 245px;
+
+    padding: 40px 35px;
+
+    background: var(--ivory);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.insights-category:hover {
+    position: relative;
+
+    z-index: 2;
+
+    background: var(--white);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.07);
+}
+
+.insights-category span {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+}
+
+.insights-category h3 {
+    margin-top: 35px;
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    color: var(--dark);
+}
+
+.insights-category p {
+    max-width: 330px;
+
+    margin-top: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   ARTICLE ARCHIVE
+========================================================= */
+
+.insights-archive {
+    padding: 120px 0;
+
+    background: #e8e6df;
+}
+
+.insights-placeholder {
+    min-height: 120px;
+
+    margin-top: 1px;
+
+    padding: 28px 5px;
+
+    display: grid;
+
+    grid-template-columns:
+        70px 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    border-top:
+        1px solid #c9ccc6;
+}
+
+.insights-placeholder:first-of-type {
+    margin-top: 55px;
+}
+
+.placeholder-number {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+}
+
+.insights-placeholder h3 {
+    font-family: var(--serif);
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    color: var(--dark);
+}
+
+.insights-placeholder p {
+    max-width: 600px;
+
+    margin-top: 6px;
+
+    font-size: 13px;
+
+    color: var(--muted);
+}
+
+.placeholder-status {
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.7px;
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   INSIGHTS PHILOSOPHY
+========================================================= */
+
+.insights-philosophy {
+    padding: 120px 0;
+
+    background: var(--ivory);
+}
+
+.insights-philosophy .section-title {
+    max-width: 850px;
+}
+
+.insights-philosophy .section-intro {
+    max-width: 680px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   INSIGHTS CTA
+========================================================= */
+
+.insights-cta {
+    padding: 120px 0 145px;
+
+    background: var(--ivory);
+}
+
+.insights-cta .section-title {
+    max-width: 750px;
+}
+
+
+/* =========================================================
+   INSIGHTS — TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .insights-page-hero {
+        min-height: auto;
+
+        padding: 135px 0 85px;
+    }
+
+    .insights-page-title {
+        font-size:
+            clamp(50px, 12vw, 70px);
+
+        letter-spacing: -2.5px;
+    }
+
+    .insights-page-intro {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .insights-coming {
+        padding: 90px 0;
+    }
+
+    .insights-coming h2 {
+        font-size:
+            clamp(42px, 10vw, 58px);
+    }
+
+    .insights-page-section,
+    .insights-archive,
+    .insights-philosophy,
+    .insights-cta {
+        padding: 90px 0;
+    }
+
+    .insights-category-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 45px;
+    }
+
+    .insights-category {
+        min-height: auto;
+
+        padding: 35px 28px;
+    }
+
+    .insights-category h3 {
+        margin-top: 25px;
+    }
+
+    .insights-placeholder {
+        grid-template-columns:
+            50px 1fr;
+
+        gap: 20px;
+
+        padding: 25px 0;
+    }
+
+    .placeholder-status {
+        grid-column: 2;
+    }
+
+}
+
+
+/* =========================================================
+   INSIGHTS — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .insights-page-hero {
+        padding-top: 120px;
+    }
+
+    .insights-page-title {
+        font-size: 48px;
+
+        letter-spacing: -2px;
+    }
+
+    .insights-page-intro {
+        font-size: 14px;
+    }
+
+    .insights-coming h2 {
+        font-size: 40px;
+    }
+
+    .insights-coming p {
+        font-size: 14px;
+    }
+
+    .insights-placeholder {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .placeholder-status {
+        grid-column: auto;
+
+        margin-top: 8px;
+    }
+
+}
+```
+
